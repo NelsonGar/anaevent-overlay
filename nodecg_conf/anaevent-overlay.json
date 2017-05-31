@@ -1,0 +1,14 @@
+{
+    "useMockData": true,
+    "twitter": {
+        "consumerKey": "JJxwFyrn9CeISeGU4Wyf7byJ5",
+        "consumerSecret": "lBB13ICed4qV1oG4eI30Rva96zHjVf4B2vOVtNblFQPRKfifPV",
+        "accessTokenKey": "304920739-21yWWKVvkNz9f5DuGtTeSGUtijxvz1cJeLj0c1T9",
+        "accessTokenSecret": "Da2ukrwNopnbUHZWAJhUwg0ew15Xi6mzwrhpCEbduTtds"
+    },
+     "lastfm": {
+        "targetAccount": "bronislavax",
+        "apiKey": "b3522d071a08569067ffa408635705bd",
+        "secret": "9882fd6c320c87daf2f586d183656382"
+    }
+}

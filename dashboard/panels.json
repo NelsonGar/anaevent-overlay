@@ -1,0 +1,23 @@
+[
+  {
+    "name": "dotafortress",
+    "title": "Dota Fortress",
+    "width": 3,
+    "file": "dotafortress.jade",
+    "faIcon": "fa-users"
+  },
+  {
+    "name": "total",
+    "title": "Total",
+    "width": 2,
+    "file": "total.jade",
+    "faIcon": "fa-dollar"
+  },
+  {
+    "name": "twitter",
+    "title": "Twitter",
+    "width": 4,
+    "file": "twitter.jade",
+    "faIcon": "fa-twitter"
+  }
+]

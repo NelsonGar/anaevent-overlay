@@ -1,0 +1,50 @@
+<link rel="import" href="../../components/iron-ajax/iron-ajax.html">
+<link rel="import" href="../../components/iron-flex-layout/iron-flex-layout-classes.html">
+<link rel="import" href="../../components/nodecg-replicant/nodecg-replicant.html">
+<link rel="import" href="../../components/paper-button/paper-button.html">
+<link rel="import" href="../../components/paper-input/paper-input.html">
+<link rel="import" href="../../components/paper-item/paper-item.html">
+<link rel="import" href="../../components/vaadin-combo-box/vaadin-combo-box.html">
+	<script src="https://cdn.vaadin.com/vaadin-core-elements/master/webcomponentsjs/webcomponents-lite.js"></script>
+
+<dom-module id="anaevent-flag-control">
+	<template>
+		<style include="iron-flex iron-flex-alignment">
+			#cplayerone {
+				width: 49%;
+				text-align: center;
+				float:left;
+				margin-right: 1%;
+			}
+			#cplayertwo {
+				width: 49%;
+				text-align: center;
+				float:left;
+			}
+		</style>
+
+		<iron-ajax
+		      auto
+		      url="countries.json"
+		      handle-as="json"
+		      last-response="{{response}}"></iron-ajax>
+		      	<vaadin-combo-box
+						id="cplayerone"
+						label="Country"
+						items="[[response]]"
+						on-selected-item-changed="_handleSelectedItemChanged"
+						item-label-path="name"
+				        data-slot="playerOneCountry"
+				></vaadin-combo-box>
+
+				<vaadin-combo-box
+						id="cplayertwo"
+						label="Country"
+						items="[[response]]"
+						on-selected-item-changed="_handleSelectedItemChanged"
+						item-label-path="name"
+				        data-slot="playerTwoCountry"
+				></vaadin-combo-box>
+	</template>
+	<script src="anaevent-flag-control.js"></script>
+</dom-module>
