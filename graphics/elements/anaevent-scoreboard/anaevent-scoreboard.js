@@ -158,12 +158,12 @@
 			const cull = this.getElementsByClassName('cull');
 			const playerOneCountry = document.getElementById('playerOneCountry');
 			const playerTwoCountry = document.getElementById('playerTwoCountry');
-			//const videoin = this.getElementsByClassName('videoin')[0];
+			const videoin = this.getElementsByClassName('videoin')[0];
 			const self = this;
 			const tl = new TimelineLite();
 
 			
-			//nodecg.playSound('scoreboard_in');
+			nodecg.playSound('scoreboard_in');
 			tl.add('start');
 
 			tl.to(cull, 0, {opacity:'1'});
@@ -173,10 +173,10 @@
 				ease: Power3.easeIn
 			}, 1);
 
-			/*tl.to(videoin, 0.2, {
+			tl.to(videoin, 0.2, {
 				opacity: '1',
 				ease: Power3.easeIn
-			}, 'start');*/
+			}, 'start');
 
 			tl.from(team, 1.5, {
 				y: '-120%',
@@ -202,7 +202,7 @@
 				opacity: '0',
 				ease: Power3.easeIn
 			}, 'start');
-			//videoin.play();
+			videoin.play();
 		},
 
 		hide() {
@@ -218,13 +218,13 @@
 			const team = this.getElementsByClassName('team');
 			const momentum = this.getElementsByClassName('momentum');
 			const cull = this.getElementsByClassName('cull');
-			/*const videoin = this.getElementsByClassName('videoin')[0];
-			const videoout = this.getElementsByClassName('videoout')[0];*/
+			const videoin = this.getElementsByClassName('videoin')[0];
+			const videoout = this.getElementsByClassName('videoout')[0];
 			const self = this;
 			const tl = new TimelineLite();
 
-			//nodecg.playSound('scoreboard_out');
-			//videoout.play();
+			nodecg.playSound('scoreboard_out');
+			videoout.play();
 
 			tl.add('start');
 			
@@ -253,20 +253,20 @@
 				ease: Power3.easeIn
 			}, 'start');
 
-			/*tl.to(videoout, 0, {
+			tl.to(videoout, 0, {
 				opacity: '1',
 				ease: Power3.easeIn
-			}, 'start');*/
+			}, 'start');
 
 			tl.to(scores, 0.5, {
 				opacity: '0',
 				ease: Power3.easeIn
 			}, 'start');
 
-			/*tl.to(videoin, 0, {
+			tl.to(videoin, 0, {
 				opacity: '0',
 				ease: Power3.easeIn
-			}, 'start');*/
+			}, 'start');
 
 			tl.set([tagWrappers, scores, team], {
 				clearProps: 'all',
