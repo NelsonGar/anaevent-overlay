@@ -53,13 +53,6 @@
         "headerColor": "#595664"
       },
       {
-        "name": "donations",
-        "title": "Donations",
-        "width": 2,
-        "file": "donations.html",
-        "headerColor": "#0D9537"
-      },
-      {
         "name": "scoreboard",
         "title": "Scoreboard",
         "width": 6,
@@ -74,28 +67,11 @@
         "headerColor": "#DC198C"
       },
       {
-        "name": "total",
-        "title": "Total",
+        "name": "schedule",
+        "title": "Schedule",
         "width": 2,
-        "file": "total.html",
-        "headerColor": "#1FA351"
-      },
-      {
-        "name": "edit-total",
-        "title": "Edit Total",
-        "width": 2,
-        "dialog": true,
-        "dialogButtons": [
-          {
-            "name": "save",
-            "type": "confirm"
-          },
-          {
-            "name": "cancel",
-            "type": "dismiss"
-          }
-        ],
-        "file": "dialogs/edit-total.html"
+        "file": "schedule.html",
+        "headerColor": "#FFAE00"
       },
       {
         "name": "twitter",
