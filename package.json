@@ -39,6 +39,16 @@
         "height": 1080
       },
       {
+        "file": "versus.html",
+        "width": 1920,
+        "height": 1080
+      },
+      {
+        "file": "commentator.html",
+        "width": 1920,
+        "height": 1080
+      },
+      {
         "file": "countdown.html",
         "width": 1920,
         "height": 1080
@@ -86,6 +96,13 @@
         "width": 1,
         "file": "countdown.html",
         "headerColor": "#000000"
+      },
+      {
+        "name": "nameplates",
+        "title": "Nameplates",
+        "width": 4,
+        "file": "nameplate.html",
+        "headerColor": "#f47425"
       }
     ],
     "soundCues": [
@@ -138,6 +155,11 @@
         "name": "challenge_accepted",
         "assignable": false,
         "defaultFile": "sound/challenge_accepted.ogg"
+      },
+      {
+        "name": "score_plus",
+        "assignable": false,
+        "defaultFile": "sound/scoreplus.mp3"
       }
     ]
   }

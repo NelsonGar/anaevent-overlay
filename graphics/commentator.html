@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <script src="//use.typekit.net/ofl6oue.js"></script>
+    <script>try {Typekit.load();} catch (e) {}</script>
+	<script src="components/gsap/src/minified/TweenMax.min.js"></script>
+	<script src="app/main.js"></script>
+    <link href="elements/anaevent-tweet/anaevent-tweet.html" rel="import">
+    <link href="elements/anaevent-nameplate/anaevent-nameplate.html" rel="import">
+
+	<style>
+		body {
+			margin: 0;
+			opacity: 0;
+		}
+
+		#container {
+			position: absolute;
+			width: 1920px;
+			height: 1080px;
+			overflow: hidden;
+			font-family: "lato";
+		}
+		
+		#nameplate {
+	      position: absolute;
+	      top: 180px;
+	    }
+	</style>
+</head>
+<body>
+    <div id="container">
+        <anaevent-brb id="brb"></anaevent-brb>
+		<div id="hashtag">GameLine</div>
+        <anaevent-tweet id="tweet"></anaevent-tweet>
+        <anaevent-nameplate id="nameplate"> </anaevent-nameplate>
+    </div>
+</body>
+</html>

@@ -48,4 +48,11 @@ module.exports = function (nodecg) {
 		nodecg.log.error('Failed to load "countdown" lib:', e.stack);
 		process.exit(1);
 	}
+
+	try {
+		require('./nameplates')(nodecg);
+	} catch (e) {
+		nodecg.log.error('Failed to load "nameplates" lib:', e.stack);
+		process.exit(1);
+	}
 };
