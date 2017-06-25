@@ -1,0 +1,31 @@
+{
+    "host": "localhost",
+    "port": 9090,
+    "login": {
+        "enabled": true,
+        "sessionSecret": "supersecret",
+        "twitch": {
+            "enabled": true,
+            "clientID": "aw2ipnpgy5wzrclkisiwwzoue7yh7z",
+            "clientSecret": "4d4oihyq46shqymmakneeg8sg4wgup",
+            "scope": "user_read channel_check_subscription channel_commercial channel_editor channel_subscriptions chat_login",
+            "allowedUsernames": [
+                "anaevent",
+                "nelsongar",
+                "gameline"
+            ]
+        }
+    },
+    "logging": {
+        "replicants": false,
+        "console": {
+            "enabled": true,
+            "level": "trace"
+        },
+        "file": {
+            "enabled": false,
+            "path": "logs/server.log",
+            "level": "info"
+        }
+    }
+}
