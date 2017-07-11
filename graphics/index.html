@@ -7,14 +7,11 @@
 	<script src="components/gsap/src/minified/TweenMax.min.js"></script>
 	<script src="app/main.js"></script>
 	<link href="elements/anaevent-donation/anaevent-donation.html" rel="import">
-	<link href="elements/anaevent-ticker/anaevent-ticker.html" rel="import">
     <link href="elements/anaevent-brb/anaevent-brb.html" rel="import">
-    <link href="elements/anaevent-lowerthird/anaevent-lowerthird.html" rel="import">
     <link href="elements/anaevent-nowplaying/anaevent-nowplaying.html" rel="import">
     <link href="elements/anaevent-scoreboard/anaevent-scoreboard.html" rel="import">
-    <link href="elements/anaevent-sponsors/anaevent-sponsors.html" rel="import">
     <link href="elements/anaevent-tweet/anaevent-tweet.html" rel="import">
-    <link href="elements/anaevent-nameplate/anaevent-nameplate.html" rel="import">
+    <link href="elements/anaevent-ticker/anaevent-ticker.html" rel="import">
 
 	<style>
 		body {
@@ -28,8 +25,8 @@
 			height: 1080px;
 			overflow: hidden;
 			font-family: "lato";
-			/*background: url("img/Overlay_SFV.png");
-			background: url("http://i.imgur.com/ivbkXt1.png");*/
+			background: url("img/bckg.png");
+			/*background: url("http://i.imgur.com/ivbkXt1.png");*/
 		}
 
 		#brb {
@@ -57,8 +54,7 @@
 		#scoreboard {
 			position: absolute;
 			top: 0px;
-			left: 50%;
-			transform: translateX(-50%);
+			margin-top: 0px;
 		}
 
 		#lowerthird {
@@ -72,26 +68,26 @@
 			top: 680px;
 			left: 25px;
 		}
-    #nameplate {
-      position: absolute;
-      top: 180px;
-    }
+
+		#nameplate {
+	      position: absolute;
+	      top: 180px;
+	    }
 	</style>
 </head>
 <body>
     <div id="container">
         <anaevent-brb id="brb"></anaevent-brb>
-		<!--div id="hashtag">#CWC2017</div-->
+		<div id="hashtag">GameLine</div>
         <anaevent-scoreboard id="scoreboard"></anaevent-scoreboard>
         <anaevent-lowerthird id="lowerthird"></anaevent-lowerthird>
         <!--anaevent-sponsors id="sponsors"></anaevent-sponsors-->
-        <!--anaevent-nowplaying id="nowPlaying"></anaevent-nowplaying-->
+        <anaevent-nowplaying id="nowPlaying"></anaevent-nowplaying>
         <anaevent-tweet id="tweet"></anaevent-tweet>
-		<anaevent-donation-tier1></anaevent-donation-tier1>
+		<!--anaevent-donation-tier1></anaevent-donation-tier1>
 		<anaevent-donation-tier2></anaevent-donation-tier2>
 		<anaevent-donation-tier3></anaevent-donation-tier3>
-    	<!--anaevent-nameplate id="nameplate"> </anaevent-nameplate>
-		<anaevent-ticker id="ticker"></anaevent-ticker-->
+    	<anaevent-ticker id="ticker"></anaevent-ticker-->
     </div>
 </body>
 </html>

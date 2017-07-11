@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+	<script src="components/gsap/src/minified/TweenMax.min.js"></script>
+	<script src="app/main.js"></script>
+    <link href="elements/anaevent-tweet/anaevent-tweet.html" rel="import">
+	<link href="elements/anaevent-versus/anaevent-versus.html" rel="import">
+	<style>
+	
+		body {
+			margin: 0;
+			opacity: 0;
+		}
+
+		#container {
+			position: absolute;
+			width: 1920px;
+			height: 1080px;
+			overflow: hidden;
+			font-family: "lato";
+			background: url("img/versus/deco.png");
+		}
+
+		#tweet {
+			right: 708px !important;
+		}
+
+		#versus {
+			position: absolute;
+			top: 0px;
+			margin-top: 0px;
+		}
+
+	</style>
+</head>
+<body>
+    <div id="container">
+        <anaevent-brb id="brb"></anaevent-brb>
+		<div id="hashtag"></div>
+    	<anaevent-versus id="versus"></anaevent-versus>
+        <anaevent-tweet id="tweet"></anaevent-tweet>
+    </div>
+</body>
+</html>

@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
 	<script src="//use.typekit.net/ofl6oue.js"></script>
 	<script>try {Typekit.load();} catch (e) {}</script>
+	<link rel="stylesheet" type="text/css" href="components/csshake/dist/csshake.css">
 	<style>
 		body {
 			margin: 0;
@@ -45,13 +46,12 @@
 			align-items: center;
 			justify-content: center;
 			top: 0;
-			left: 150px;
+			left: 570px;
 			height: 100%;
 			-webkit-filter: drop-shadow(0 0 8px rgba(0,0,0,0.5));
 		}
 
 		#logo {
-			height: 280px;
 		}
 
 		#flavor {
@@ -60,7 +60,8 @@
 		}
 
 		#time {
-			font-size: 192px;
+			font-size: 102px;
+			margin-top: 110px;
 			-webkit-font-feature-settings: 'tnum';
 			font-weight: 600;
 			transition: opacity 333ms ease;
@@ -70,11 +71,11 @@
 </head>
 <body>
 	<div id="container">
-		<video id="loop" src="img/countdown_loop.mp4" muted loop autoplay></video> 
-		<div id="hashtag">#TotH2016</div>
+		<img src="img/bckgcountdown.png"> 
+		<div id="hashtag"></div>
 		<div id="content">
-			<img id="logo" src="img/toth_horizontal_logo.png">
-			<div id="flavor">will begin shortly!</div>
+			<img id="logo" class="shake-chunk shake-constant" src="img/logol.png">
+			<div id="flavor">Will begin shortly!</div>
 			<div id="time"></div>
 		</div>
 	</div>

@@ -14,7 +14,7 @@
 
 	const MAX_HOST_NAME_WIDTH = 425;
 	const MAX_HOST_INFO_WIDTH = 375;
-	const MAX_COUCH_NAME_WIDTH = 368;
+	const MAX_COUCH_NAME_WIDTH = 500;
 	const MAX_COUCH_INFO_WIDTH = 342;
 	const MAX_PLAYER_NAME_WIDTH = 428;
 	const MAX_PLAYER_INFO_WIDTH = 378;
@@ -149,8 +149,12 @@
 		},
 
 		couchVisibleChanged(newVal) {
+
+			const barre = this.getElementsByClassName('barre');
+			const blackbarre = this.getElementsByClassName('blackbarre');
+
 			if (newVal) {
-				this.tl.add('couchEnter', '+=0.1');
+				this.tl.add('couchEnter', '+=0.5');
 
 				if (this.couch1) {
 					this.tl.call(() => {
@@ -174,12 +178,26 @@
 				}
 
 				if (this.couch1 || this.couch2 || this.couch3) {
+
+					this. tl.add('start');
+
 					this.tl.to(this.$.couch, 1, {
-						y: 0,
+						x: 0,
 						opacity: 1,
 						ease: Power3.easeOut
-					}, 'couchEnter+=0.1');
-				}
+					}, 'couchEnter+=0.4');
+
+					this.tl.to(blackbarre, 0.4, {
+						x: '0%',
+						opacity: 1,
+						ease: Power3.easeIn
+					}, 'start');
+
+					this.tl.to(barre, 0.6, {
+						x: '0%',
+						ease: Power3.easeIn
+					}, 'start');
+					}
 
 				if (this.host) {
 					this.tl.call(() => {
@@ -188,17 +206,31 @@
 					}, null, null, 'couchEnter');
 
 					this.tl.to(this.$.host, 1, {
-						y: 0,
+						x: 0,
 						opacity: 1,
 						ease: Power3.easeOut
 					}, 'couchEnter');
 				}
 			} else {
-				this.tl.to([this.$.couch, this.$.host], 0.8, {
-					y: 300,
+
+				this. tl.add('start');
+
+				this.tl.to(blackbarre, 0.8, {
+					x: '-130%',
 					opacity: 0,
 					ease: Power3.easeIn
-				});
+				}, 'start');
+
+				this.tl.to(barre, 1.8, {
+					x: '-100%',
+					ease: Power3.easeIn
+				}, 'start');
+
+				this.tl.to([this.$.couch, this.$.host], 1.3, {
+					x: -300,
+					opacity: 0,
+					ease: Power3.easeIn
+				}, 'start');
 			}
 		},
 

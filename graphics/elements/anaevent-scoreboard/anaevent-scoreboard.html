@@ -4,26 +4,24 @@
 <dom-module id="anaevent-scoreboard">
 	<template>
 		<style>
-:host {
+			:host {
 				padding: none;
 				display: flex;
 				width: 1920px;
 				height: 400px;
 				font-size: 42px;
-				font-weight: 800;
-				font-family: 'RBK';
+				font-family: 'rcade';
 			}
 
 			@font-face {
-			    font-family: 'RBK';
-			    src: url('font/rbk.otf');
+			    font-family: 'rcade';
+			    src: url('font/Thixel.ttf');
 			}
 
 			.wrapper {
 				display: flex;
 				flex-direction: column;
 				overflow: hidden;
-				font-weight: 100;
 			}
 
 			.details {
@@ -42,35 +40,35 @@
 
 			.tag {
 				font-size: 19pt;
-    			margin-top: 38px;
+    			margin-top: 23px;
 				text-transform: uppercase;
 				/*text-shadow: 3px 3px #000000;*/
 			}
 
 			.gaucheTag {
-			    margin-left: 94px;
+			    margin-left: 328px;
 			    width: 600px;
 			    text-align: center;
 			    /*text-transform: uppercase;*/
 			}
 
 			.droiteTag {
-			    margin-left: 1230px;
+			    margin-left: 1006px;
     			width: 600px;
     			text-align: center;
 			    /*text-transform: uppercase;*/
 			}
 
 			.momentum {
-			    position: absolute;
-			    margin-left: 812px;
-			    font-size: 20pt;
-			    color: #fec13d;
+				position: absolute;
+			    margin-left: 815px;
+			    font-size: 28pt;
+			    color: #5caaf2;
 			    text-align: center;
 			    width: 300px;
-			    z-index: 2;
-			    top: 6px;
-			    text-shadow: 3px 3px #cd1d4b;
+			    z-index: 4;
+			    top: 66px;
+			    text-shadow: 3px 3px #101886;
 			}
 
 			.score {
@@ -81,30 +79,40 @@
 				font-size: 30pt;
 				transform: translateY(0%);
 				position: absolute;
-				margin-top: 30px;
+				margin-top: 12px;
+				opacity: 0;
 				/*text-shadow: 3px 3px #000000;*/
+			}
+
+			#scoreG {
+				margin-left: 820px;
+    			z-index: 2;
+			}
+
+			#scoreD {
+				margin-left: 1046px;
+				z-index: 2;
 			}
 
 			.team {
-				font-weight: bold;
 				color: #ffffff;
 				transform: translateY(0%);
 				position: absolute;
-				font-size: 30pt;
+				font-size: 22pt;
 				/*text-shadow: 3px 3px #000000;*/
-				margin-top: 12px;
+				margin-top: 8px;
 				text-transform: uppercase;
 				z-index: 1;
+				width: 400px;
+				text-align: center;
 			}
 
 			.teamG {
-				margin-left: 235px;
+				margin-left: 118px;
 			}
 
 			.teamD {
-				margin-left: 902px;
-			    width: 779px;
-			    text-align: right;
+				margin-left: 1408px;
 			}
 
 			#logoWrapper {
@@ -116,61 +124,16 @@
 				height: 72px;
 			}
 
-			.teamBckg {
-				max-width: 50%;
-				height: auto;
-				position: absolute;
-			}
-			#playerG {
-				margin-left: 173px;
-			    margin-top: 11px;
-    			z-index: 1;
-			}
 			#drapeauG {
 			    margin-left: -15px;
 			    margin-top: -14px;
 			    z-index: 2;
-			}
-			#scoreG {
-				margin-left: 654px;
-    			z-index: 2;
-			}
-
-			#scoreGc {
-				margin-left: 656px;
-    			z-index: 2;
-			}
-
-			#teamG {
-				margin-left: 149px;
-				margin-top: -23px;
-			}
-
-			#playerD {
-				margin-left: 1070px;
-				margin-top: 6px;
-    			z-index: 1;
 			}
 
 			#drapeauD {
 			    margin-left: 1673px;
 			    margin-top: -10px;
 			    z-index: 2;
-			}
-
-			#scoreD {
-				margin-left: 1159px;
-				margin-top: -6px;
-				z-index: 2;
-			}
-
-			#scoreDc {
-				margin-left: 1203px;
-				z-index: 2;
-			}
-
-			#teamD {
-				margin-left: 1120px;
 			}
 
 			.drapeau {
@@ -183,10 +146,6 @@
 
 			.scorebar {
     			margin-top: -11px;
-			}
-
-			.teamName {
-				margin-top: -14px;
 			}
 
 			#flammesBasOrange {
@@ -238,6 +197,7 @@
 			    width: 62px;
 			    border-radius: 22px;
 			    height: 49px;
+			    opacity: 0;
 			}
 
 			#playerTwoCountry{
@@ -248,14 +208,63 @@
 			    width: 62px;
 			    border-radius: 22px;
 			    height: 49px;
+			    opacity: 0;
+			}
+
+			.absolutepos {
+				position: absolute;
+			}
+
+			.blackside {
+  				top: 691px;
+			}
+
+			.barresjoueurs {
+				left: 212px;
+				top : 5px;
+			}
+
+			.momentumback {
+				top: 62px;
+				left: 848px;
+				z-index: 3;
+			}
+
+			.triangleTop {
+				left: 800px;
+			}
+
+			.rcadecup {
+				top: 1036px;
+    			left: 32px;
+			}
+
+			.logoRcadeCup {
+				top: 830px;
+    			left: 38px;
+			}
+
+			.logoRcade {
+				left: 1666px;
+    			top: 944px;
 			}
 
 		</style>
 		
+		<div class="rcade">
+			<img class="absolutepos barresjoueurs" src="rcade/scoreboard/Barres_joueurs.png" />
+			<img class="absolutepos blackside" src="rcade/scoreboard/blackside.png" />
+			<img class="absolutepos momentumback" src="rcade/scoreboard/momemtum.png" />
+			<img class="absolutepos rcadecup" src="rcade/scoreboard/rcadecup.png" />
+			<img class="absolutepos triangleTop" src="rcade/scoreboard/triangle_top.png" />
+			<img class="absolutepos logoRcadeCup" src="rcade/scoreboard/logo_rcade_cup.png" />
+			<img class="absolutepos logoRcade" src="rcade/scoreboard/logo_rcade.png" />
+		</div>
+
 		<div class="cull" team="blu">
 			<div class="wrapper">
 				<div class="details">
-					<div id="scoreGc" class="score">0</div>
+					<div id="scoreG" class="score">0</div>
 					<div class="team teamG">TEAM</div>
 					<div class="tagWrapper">
 						<div class="tag gaucheTag">BLU</div>
@@ -271,7 +280,7 @@
 						<div class="tag droiteTag">RED</div>
 					</div>
 					<div class="team teamD">TEAM</div>
-					<div id="scoreDc" class="score">0</div>
+					<div id="scoreD" class="score">0</div>
 				</div>
 			</div>
 			<img id="playerTwoCountry" src="flags/France.png">
@@ -282,8 +291,6 @@
 			<div class="hashtag">
 			</div>
 		</div>
-		<!--video class="videoscoreboard videoin" preload src="img/RBK/rbk_in.webm" type="video/webm"></video>
-		<video class="videoscoreboard videoout" preload src="img/RBK/rbk_out.webm" type="video/webm"></video-->
 	</template>
 	<script src="anaevent-scoreboard.js"></script>
 </dom-module>

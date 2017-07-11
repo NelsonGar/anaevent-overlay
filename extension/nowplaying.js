@@ -1,7 +1,6 @@
 'use strict';
 
 const LastFmNode = require('lastfm').LastFmNode;
-
 module.exports = function (nodecg) {
 	if (!nodecg.bundleConfig || typeof nodecg.bundleConfig.lastfm === 'undefined') {
 		nodecg.log.error(`"lastfm" is not defined in cfg/${nodecg.bundleName}.json! ` +

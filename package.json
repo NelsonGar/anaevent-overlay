@@ -11,7 +11,7 @@
     "static": "eslint **/*.js",
     "test": "npm run static"
   },
-  "description": "The main broadcast assets by Nelson Garcia.",
+  "description": "The main broadcast assets for GameLineTV",
   "version": "1.0.0",
   "license": "MIT",
   "dependencies": {
@@ -39,41 +39,14 @@
         "height": 1080
       },
       {
-        "file": "versusplayer.html",
+        "file": "versus.html",
         "width": 1920,
         "height": 1080
       },
       {
-        "file": "draft.html",
+        "file": "commentator.html",
         "width": 1920,
         "height": 1080
-      },
-      {
-        "file": "pick.html",
-        "width": 1920,
-        "height": 1080
-      },
-      {
-        "file": "commentateur.html",
-        "width": 1920,
-        "height": 1080
-      },
-      {
-        "file": "dotafortress.html",
-        "width": 1920,
-        "height": 1080
-      },
-      {
-        "file": "td_talkback.html",
-        "width": 1280,
-        "height": 720,
-        "singleInstance": true
-      },
-      {
-        "file": "fm_talkback.html",
-        "width": 1280,
-        "height": 720,
-        "singleInstance": true
       },
       {
         "file": "countdown.html",
@@ -87,80 +60,35 @@
         "title": "Master Controls",
         "width": 2,
         "file": "master.html",
-        "headerColor": "#f47425"
-      },
-      {
-        "name": "donations",
-        "title": "Donations",
-        "width": 2,
-        "file": "donations.html",
-        "headerColor": "#f47425"
-      },
-      {
-        "name": "lowerthird",
-        "title": "Lowerthird",
-        "width": 2,
-        "file": "lowerthird.html",
-        "headerColor": "#f47425"
+        "headerColor": "#595664"
       },
       {
         "name": "scoreboard",
         "title": "Scoreboard",
         "width": 6,
         "file": "scoreboard.html",
-        "headerColor": "#f47425"
+        "headerColor": "#671CFF"
       },
       {
         "name": "now-playing",
         "title": "Now Playing",
         "width": 2,
         "file": "now-playing.html",
-        "headerColor": "#f47425"
+        "headerColor": "#DC198C"
       },
       {
-        "name": "total",
-        "title": "Total",
+        "name": "schedule",
+        "title": "Schedule",
         "width": 2,
-        "file": "total.html",
-        "headerColor": "#f47425"
-      },
-      {
-        "name": "edit-total",
-        "title": "Edit Total",
-        "width": 2,
-        "dialog": true,
-        "dialogButtons": [
-          {
-            "name": "save",
-            "type": "confirm"
-          },
-          {
-            "name": "cancel",
-            "type": "dismiss"
-          }
-        ],
-        "file": "dialogs/edit-total.html"
+        "file": "schedule.html",
+        "headerColor": "#FFAE00"
       },
       {
         "name": "twitter",
         "title": "Twitter",
         "width": 3,
         "file": "twitter.html",
-        "headerColor": "#f47425"
-      },
-      {
-        "name": "schedule",
-        "title": "Schedule",
-        "width": 4,
-        "file": "schedule.html",
-        "headerColor": "#f47425"
-      },
-      {
-        "name": "dota-fortress",
-        "title": "Dota Fortress",
-        "width": 4,
-        "file": "dota-fortress.html",
-        "headerColor": "#f47425"
+        "headerColor": "#19A6FF"
       },
       {
         "name": "countdown",
@@ -227,6 +155,11 @@
         "name": "challenge_accepted",
         "assignable": false,
         "defaultFile": "sound/challenge_accepted.ogg"
+      },
+      {
+        "name": "score_plus",
+        "assignable": false,
+        "defaultFile": "sound/scoreplus.mp3"
       }
     ]
   }

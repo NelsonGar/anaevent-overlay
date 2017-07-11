@@ -16,6 +16,7 @@
     "iron-validator-behavior": "PolymerElements/iron-validator-behavior#^1.0.1",
     "iron-ajax": "PolymerElements/iron-ajax#^1.4.3",
     "paper-item": "PolymerElements/paper-item#^1.2.1",
-    "paper-dropdown-menu": "PolymerElements/paper-dropdown-menu#^1.5.0"
+    "paper-dropdown-menu": "PolymerElements/paper-dropdown-menu#^1.5.0",
+    "csshake": "^1.5.2"
   }
 }

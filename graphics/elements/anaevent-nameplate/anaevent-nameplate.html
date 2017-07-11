@@ -35,7 +35,7 @@
 				top: 3px;
 
 				color: black;
-				font-family: 'proxima-nova-condensed';
+				font-family: 'rcade';
 				font-weight: 800;
 				font-size: 30px;
 				text-transform: uppercase;
@@ -45,13 +45,13 @@
 			.info {
 				display: flex;
 				align-items: center;
-				height: 57px;
+				height: 13px;
 				padding: 0 20px;
 			}
 
 			.info-content {
 				color: white;
-				font-family: 'proxima-nova';
+				font-family: 'rcade';
 				font-size: 25px;
     			margin-left: 15px;
     			margin-right: 15px;
@@ -65,7 +65,7 @@
 
 			#couch {
 				position: absolute;
-				top: 561px;
+				top: 258px;
 				left: 0;
 				display: flex;
 				flex-direction: column;
@@ -90,27 +90,30 @@
 			}
 
 			.couch-name {
-				color: black;
-				font-family: ProximaNovaCond;
+				color: white;
+				font-family: ;
 				font-size: 60px;
-				font-family: 'proxima-nova-condensed';
-				font-weight: 800;
+				font-family: 'rcade';
 				text-transform: uppercase;
-				margin-left: 80px;
+				margin-left: 200px;
 				transform-origin: left;
 			}
 
 			.couch-info {
 				color: white;
-				font-family: 'proxima-nova';
+				font-family: 'rcade';
 				font-size: 32px;
-				font-weight: 400;
-				margin-left: 80px;
+				margin-left: 200px;
 				transform-origin: left;
 			}
 
+			@font-face {
+				font-family: 'rcade';
+				src: url('font/Thixel.ttf');
+			}
+
 			.couch-column {
-				width: 342px;
+				width: 140px;
 			}
 
 			#host {
@@ -127,7 +130,7 @@
 			}
 
 			#host .name {
-				width: 465px;
+				width: 665px;
 				justify-content: flex-start;
 			}
 
@@ -193,8 +196,25 @@
 				/* Prep for animation */
 				transform: translateX(25px);
 			}
-		</style>
+			.absolutepos {
+				position: absolute;
+			}
 
+			.barre {
+				top: 510px;
+			}
+
+			.blackbarre {
+				top: 554px;
+			    z-index: -1;
+			    left: 90px;
+			}
+
+		</style>
+		<div>
+			<img class="absolutepos barre" src="img/barre.png">
+			<img class="absolutepos blackbarre" src="img/black.png">
+		</div>
 		<div id="couch">
 			<div id="couch-names" class="name">
 				<div id="couch1-name" class="couch-name couch-column" hidden="[[!couch1]]"></div>

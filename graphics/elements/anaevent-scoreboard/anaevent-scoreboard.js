@@ -155,15 +155,14 @@
 			const scores = this.getElementsByClassName('score');
 			const team = this.getElementsByClassName('team');
 			const momentum = this.getElementsByClassName('momentum');
+			const barresJoueurs = this.getElementsByClassName('barresjoueurs');
 			const cull = this.getElementsByClassName('cull');
-			const playerOneCountry = document.getElementById('playerOneCountry');
-			const playerTwoCountry = document.getElementById('playerTwoCountry');
-			//const videoin = this.getElementsByClassName('videoin')[0];
+			const triangleTop = this.getElementsByClassName('triangleTop');
 			const self = this;
 			const tl = new TimelineLite();
 
-			
-			//nodecg.playSound('scoreboard_in');
+			nodecg.playSound('scoreboard_in');
+
 			tl.add('start');
 
 			tl.to(cull, 0, {opacity:'1'});
@@ -173,36 +172,30 @@
 				ease: Power3.easeIn
 			}, 1);
 
-			/*tl.to(videoin, 0.2, {
+			tl.to(barresJoueurs, 1, {
+				ease: Back.easeInOut.config(1.7),
+				y: '0%'
+			}, 'start');
+
+			tl.to(triangleTop, 2, {
+				ease: Power1.easeInOut,
+				y: '0%'
+			}, 'start');
+
+			tl.from(team, 2.2, {
+				opacity: '0',
+				ease: Power3.easeIn
+			}, 'start');
+
+			tl.from(tagWrappers, 2.5, {
+				opacity: '0',
+				ease: Power3.easeIn
+			}, 'start');
+
+			tl.to(scores, 2.8, {
 				opacity: '1',
 				ease: Power3.easeIn
-			}, 'start');*/
-
-			tl.from(team, 1.5, {
-				y: '-120%',
-				ease: Power3.easeIn
 			}, 'start');
-
-			tl.from(tagWrappers, 1.5, {
-				opacity: '0',
-				ease: Power3.easeIn
-			}, 'start');
-
-			tl.from(playerOneCountry, 1.5, {
-				opacity: '0',
-				ease: Power3.easeIn
-			}, 'start');
-
-			tl.from(playerTwoCountry, 1.5, {
-				opacity: '0',
-				ease: Power3.easeIn
-			}, 'start');
-
-			tl.from(scores, 1.5, {
-				opacity: '0',
-				ease: Power3.easeIn
-			}, 'start');
-			//videoin.play();
 		},
 
 		hide() {
@@ -216,15 +209,14 @@
 			const tagWrappers = this.getElementsByClassName('tagWrapper');
 			const scores = this.getElementsByClassName('score');
 			const team = this.getElementsByClassName('team');
+			const barresJoueurs = this.getElementsByClassName('barresjoueurs');
 			const momentum = this.getElementsByClassName('momentum');
 			const cull = this.getElementsByClassName('cull');
-			/*const videoin = this.getElementsByClassName('videoin')[0];
-			const videoout = this.getElementsByClassName('videoout')[0];*/
+			const triangleTop = this.getElementsByClassName('triangleTop');
 			const self = this;
 			const tl = new TimelineLite();
 
-			//nodecg.playSound('scoreboard_out');
-			//videoout.play();
+			nodecg.playSound('scoreboard_out');
 
 			tl.add('start');
 			
@@ -233,8 +225,18 @@
 				ease: Power3.easeIn
 			}, 'start');
 
-			tl.to(team, 0.5, {
-				y: '-120%',
+			tl.to(barresJoueurs, 2, {
+				y: '-100%',
+				ease: Back.easeIn
+			}, 'start');
+
+			tl.to(triangleTop, 1, {
+				ease: Power1.easeInOut,
+				y: '-100%'
+			}, 'start');
+
+			tl.to(team, 0.2, {
+				opacity: '0',
 				ease: Power3.easeIn
 			}, 'start');
 
@@ -243,30 +245,10 @@
 				ease: Power3.easeIn
 			}, 'start');
 
-			tl.to(playerOneCountry, 0.2, {
+			tl.to(scores, 0.8, {
 				opacity: '0',
 				ease: Power3.easeIn
 			}, 'start');
-
-			tl.to(playerTwoCountry, 0.2, {
-				opacity: '0',
-				ease: Power3.easeIn
-			}, 'start');
-
-			/*tl.to(videoout, 0, {
-				opacity: '1',
-				ease: Power3.easeIn
-			}, 'start');*/
-
-			tl.to(scores, 0.5, {
-				opacity: '0',
-				ease: Power3.easeIn
-			}, 'start');
-
-			/*tl.to(videoin, 0, {
-				opacity: '0',
-				ease: Power3.easeIn
-			}, 'start');*/
 
 			tl.set([tagWrappers, scores, team], {
 				clearProps: 'all',
@@ -277,61 +259,125 @@
 		},
 
 		changeTag(tagEl, newValue) {
+			const tl = new TimelineLite();
+
+			tl.add('start');
+			tl.to(tagEl, 0, {
+				opacity: '0',
+				ease: Power3.easeIn
+			}, 'start');
+
 			tagEl.innerHTML = newValue;
 
-			const bluTag = this.$$('div[team="blu"] .tag');
-			const redTag = this.$$('div[team="red"] .tag');
-
-			// Reset width of tag wrappers. We'll set it after the tags themselves are sorted
-			const bluTagWrapper = bluTag.parentNode;
-			const redTagWrapper = redTag.parentNode;
-			bluTagWrapper.style.width = '';
-			redTagWrapper.style.width = '';
-
-			// If tag is wider than 200px, scale it down
-			const maxWidth = 200;
-			bluTag.style.transform = '';
-			redTag.style.transform = '';
-
-			if (bluTag.scrollWidth > bluTag.offsetWidth) {
-				bluTag.style.transform = `scaleX(${bluTag.offsetWidth / bluTag.scrollWidth})`;
-			}
-
-			if (redTag.scrollWidth > redTag.offsetWidth) {
-				redTag.style.transform = `scaleX(${redTag.offsetWidth / redTag.scrollWidth})`;
-			}
-
-			// Make both tag wrappers the same width
-			let width = Math.max(bluTag.offsetWidth, redTag.offsetWidth);
-			if (width > maxWidth) {
-				width = maxWidth;
-			}
-			bluTagWrapper.style.width = `${width}px`;
-			redTagWrapper.style.width = `${width}px`;
+			tl.to(tagEl, 0.5, {
+				opacity: '1',
+				ease: Power3.easeIn
+			}, 0);
 		},
 
 		changeScore(scoreEl, newValue) {
+			const tl = new TimelineLite();
+			
+			if (newValue != 0)
+				nodecg.playSound('score_plus');
+
+			tl.add('start');
+			tl.to(scoreEl, 0, {
+				opacity: '0',
+				ease: Power3.easeIn
+			}, 'start');
+
 			scoreEl.innerHTML = newValue;
+
+			tl.to(scoreEl, 0.5, {
+				opacity: '1',
+				ease: Power3.easeIn
+			}, 0);
 		},
 
 		changeTeam(teamEl, newValue) {
+			const tl = new TimelineLite();
+
+			tl.add('start');
+			tl.to(teamEl, 0, {
+				opacity: '0',
+				ease: Power3.easeIn
+			}, 'start');
+
 			teamEl.innerHTML = newValue;
+
+			tl.to(teamEl, 0.5, {
+				opacity: '1',
+				ease: Power3.easeIn
+			}, 0);
 		},
 
 		changeMomentum(momEl, newValue) {
+			const tl = new TimelineLite();
+
+			tl.add('start');
+			tl.to(momEl, 0, {
+				opacity: '0',
+				ease: Power3.easeIn
+			}, 'start');
+
 			momEl.innerHTML = newValue;
+
+			tl.to(momEl, 0.5, {
+				opacity: '1',
+				ease: Power3.easeIn
+			}, 0);
 		},
 
 		changeHashtag(hashEl, newValue) {
+			const tl = new TimelineLite();
+
+			tl.add('start');
+			tl.to(hashEl, 0, {
+				opacity: '0',
+				ease: Power3.easeIn
+			}, 'start');
+
 			hashEl.innerHTML = newValue;
+
+			tl.to(hashEl, 0.5, {
+				opacity: '1',
+				ease: Power3.easeIn
+			}, 0);
 		},
 
 		changeBluCountry(countryOneEl, newValue) {
+			const tl = new TimelineLite();
+
+			tl.add('start');
+			tl.to(countryOneEl, 0, {
+				opacity: '0',
+				ease: Power3.easeIn
+			}, 'start');
+
 			countryOneEl.src = newValue;
+
+			tl.to(countryOneEl, 0.5, {
+				opacity: '0',
+				ease: Power3.easeIn
+			}, 0);
 		},
 
 		changeRedCountry(countryTwoEl, newValue) {
+			const tl = new TimelineLite();
+
+			tl.add('start');
+			tl.to(countryTwoEl, 0, {
+				opacity: '0',
+				ease: Power3.easeIn
+			}, 'start');
+
 			countryTwoEl.src = newValue;
+
+			tl.to(countryTwoEl, 0.5, {
+				opacity: '0',
+				ease: Power3.easeIn
+			}, 0);
 		}
 	});
 })();
