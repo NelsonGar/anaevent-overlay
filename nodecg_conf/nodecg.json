@@ -8,7 +8,7 @@
             "enabled": true,
             "clientID": "aw2ipnpgy5wzrclkisiwwzoue7yh7z",
             "clientSecret": "4d4oihyq46shqymmakneeg8sg4wgup",
-            "scope": "user_read channel_check_subscription channel_commercial channel_editor channel_subscriptions chat_login",
+            "scope": "user_read chat_login",
             "allowedUsernames": [
                 "anaevent",
                 "nelsongar",
@@ -16,6 +16,7 @@
             ]
         }
     },
+    "developer": true,
     "logging": {
         "replicants": false,
         "console": {
